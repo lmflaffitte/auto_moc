@@ -1,0 +1,14 @@
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Traceback (most recent call last):
+  File "automoc.py", line 46, in <module>
+    blynk.run()
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 246, in run
+    data = self.conn.recv(self.buffin)
+KeyboardInterrupt
