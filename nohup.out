@@ -6,8 +6,14 @@
         /___/ for Python v0.2.0 (Linux)
 
 Welcome to the 4Runner MOC, powered by Raspberry Pi
+Left Side LED Status: 1
+Left Side LED Status: 0
+Ditch Light LED Status: 1
+Ditch Light LED Status: 0
+Left Side LED Status: 1
+Left Side LED Status: 0
 Traceback (most recent call last):
-  File "automoc.py", line 46, in <module>
+  File "automoc_local.py", line 60, in <module>
     blynk.run()
   File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 246, in run
     data = self.conn.recv(self.buffin)

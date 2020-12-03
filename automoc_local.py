@@ -6,7 +6,12 @@ import lib8relay
 
 
 # Initialize Blynk
-blynk = BlynkLib.Blynk('SngWfLytk3BxQcrVcj0X483pwGq2XRwU')
+blynk = BlynkLib.Blynk('LvtQ5eL-1to3mBm8GXblYgoqPAjZm4zH',
+			server='10.0.0.9',
+			port=8080,
+			heartbeat=30
+			#log=print
+			)
 
 print('Welcome to the 4Runner MOC, powered by Raspberry Pi')
 
