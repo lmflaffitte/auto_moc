@@ -12,6 +12,9 @@ General Configuration
 
 STATIC IP: 10.0.0.9
 
+Phone and Raspberry Pi must be on same network. If this is run in the car, the Raspberry Pi must be on hotspot.
+
+
 Run the AutoMoc.py Script:
 
 $cd tools/auto_moc
