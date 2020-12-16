@@ -824,3 +824,184 @@ $GNGGA,002611.00,4738.46832,N,12219.67830,W,2,12,0.81,3.7,M,-18.8,M,,0000*75
 $GNRMC,002626.00,A,4738.46771,N,12219.67800,W,0.079,,081220,,,D*75
 $GNGGA,002626.00,4738.46771,N,12219.67800,W,2,12,0.81,6.0,M,-18.8,M,,0000*78
 $GNRMC,00
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Ditch Light LED Status: 1
+Ditch Light LED Status: 0
+Ditch Light LED Status: 1
+Ditch Light LED Status: 0
+Right Side LED Status: 1
+Right Side LED Status: 0
+Ditch Light LED Status: 1
+Ditch Light LED Status: 0
+Traceback (most recent call last):
+  File "automoc.py", line 147, in <module>
+    blynk.run()
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 252, in run
+    self.process(data)
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 213, in process
+    self.emit("int_"+args[1], args[2:])
+IndexError: list index out of range
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Left Side LED Status: 1
+Left Side LED Status: 0
+Right Side LED Status: 1
+Right Side LED Status: 0
+RT LED Lightbar Status: 1
+RT LED Lightbar Status: 0
+Ditch Light LED Status: 1
+Ditch Light LED Status: 0
+Rear LED Status: 1
+Rear LED Status: 0
+Traceback (most recent call last):
+  File "automoc.py", line 147, in <module>
+    blynk.run()
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 252, in run
+    self.process(data)
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 213, in process
+    self.emit("int_"+args[1], args[2:])
+IndexError: list index out of range
+command failed: Operation not permitted (-1)
+Device Available Check try  0
+Device Available, checking SSid Results
+No SSid found, assessing WiFi status
+Hostspot already active
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Traceback (most recent call last):
+  File "automoc.py", line 147, in <module>
+    blynk.run()
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 252, in run
+    self.process(data)
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 213, in process
+    self.emit("int_"+args[1], args[2:])
+IndexError: list index out of range
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Traceback (most recent call last):
+  File "automoc.py", line 147, in <module>
+    blynk.run()
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 252, in run
+    self.process(data)
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 213, in process
+    self.emit("int_"+args[1], args[2:])
+IndexError: list index out of range
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Traceback (most recent call last):
+  File "automoc.py", line 147, in <module>
+    blynk.run()
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 252, in run
+    self.process(data)
+  File "/usr/local/lib/python2.7/dist-packages/BlynkLib.py", line 213, in process
+    self.emit("int_"+args[1], args[2:])
+IndexError: list index out of range
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+SCRIPT WAS INTERRUPTED
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+SCRIPT WAS INTERRUPTED
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Traceback (most recent call last):
+  File "automoc.py", line 149, in <module>
+    timer.run()
+  File "build/bdist.linux-armv6l/egg/blynktimer.py", line 102, in run
+  File "build/bdist.linux-armv6l/egg/blynktimer.py", line 127, in run
+  File "automoc.py", line 109, in send_gps_data
+    rmc_data = gather_rmc_data()
+  File "automoc.py", line 96, in gather_rmc_data
+    ser = serial.Serial("/dev/ttyACM3",115200)
+  File "/usr/lib/python2.7/dist-packages/serial/serialutil.py", line 240, in __init__
+    self.open()
+  File "/usr/lib/python2.7/dist-packages/serial/serialposix.py", line 268, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM3: [Errno 2] No such file or directory: '/dev/ttyACM3'
+
+    ___  __          __
+   / _ )/ /_ _____  / /__
+  / _  / / // / _ \/  '_/
+ /____/_/\_, /_//_/_/\_\
+        /___/ for Python v0.2.0 (Linux)
+
+Found BerryIMUv3 (LSM6DSL)
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Right Side LED Status: 1
+Right Side LED Status: 0
+RT LED Lightbar Status: 1
+RT LED Lightbar Status: 0
+Ditch Light LED Status: 1
+Ditch Light LED Status: 0
+Rear LED Status: 1
+Rear LED Status: 0
+Traceback (most recent call last):
+  File "automoc.py", line 149, in <module>
+    timer.run()
+  File "build/bdist.linux-armv6l/egg/blynktimer.py", line 102, in run
+  File "build/bdist.linux-armv6l/egg/blynktimer.py", line 127, in run
+  File "automoc.py", line 109, in send_gps_data
+    rmc_data = gather_rmc_data()
+  File "automoc.py", line 96, in gather_rmc_data
+    ser = serial.Serial("/dev/ttyACM3",115200)
+  File "/usr/lib/python2.7/dist-packages/serial/serialutil.py", line 240, in __init__
+    self.open()
+  File "/usr/lib/python2.7/dist-packages/serial/serialposix.py", line 268, in open
+    raise SerialException(msg.errno, "could not open port {}: {}".format(self._port, msg))
+serial.serialutil.SerialException: [Errno 2] could not open port /dev/ttyACM3: [Errno 2] No such file or directory: '/dev/ttyACM3'
