@@ -11,6 +11,20 @@ General Configuration
 - A Blynk local server is set up on the rPi with the following: https://github.com/blynkkk/blynk-server, use https://www.youtube.com/watch?v=SD_ke78N7-4 as a guide
 - A script was written to pipe GPS data through the USB serial port that runs on the rPi boot.
 
+Relay Control and Mapping
+
+
+Alarm System
+- Once the alarm is armed, a number of functions occur:
+1. After 10 seconds of arming the alarm, power is cut to the fuel pump
+2. GPS location, altitude, date, and time are all saved
+3. A text message is sent to the owner to verify GMS connectivity
+4. If the GPS location moves by more than X meters while the alarm is active, the following occurs:
+  a. A text message is sent to the owner indicating that the vehicle has moved
+  b. The Ozzmaker GMS/GPS will begin streaming GPS data to InitialState.com
+5. If the IMU senses a significant disturbance in its accelerometers, it will send a message to the owner indicating so
+
+
 
 STATIC IP: 10.0.0.9
 
