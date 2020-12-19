@@ -7,8 +7,10 @@ AutoMOC currently can do the following:
 
 General Configuration
 - The network architecture is such that the entire AutoMOC is run offline. The rPi creates a wifi hotspot which is connected to via the mobile app. A Blynk local server is set up on the rPi. The mobile UI then commands the Blynk app all via Virtual Pins -> Python Script which pulls from the Blynk local server -> Components
-- The hotspot is set up via the following: https://github.com/rudiratlos/hotspot - this script is modified to set a static IP of 10.0.0.9
+- The hotspot is set up via the following: https://github.com/rudiratlos/hotspot - this script is modified to set a static IP of 10.0.0.9. A script was written to start the hotspot on boot
 - A Blynk local server is set up on the rPi with the following: https://github.com/blynkkk/blynk-server, use https://www.youtube.com/watch?v=SD_ke78N7-4 as a guide
+- A script was written to pipe GPS data through the USB serial port that runs on the rPi boot.
+
 
 STATIC IP: 10.0.0.9
 
@@ -26,3 +28,15 @@ $nohup python automoc.py
 Cancel the script that's running in the background
 $killall python
 
+Component READMEs:
+Blynk Python: https://github.com/blynkkk/lib-python 
+Blynk Server: https://github.com/blynkkk/blynk-server
+Mobile Hotspot: https://github.com/rudiratlos/hotspot
+Relay Board: https://github.com/SequentMicrosystems/8relay-rpi
+Watchdog: https://github.com/SequentMicrosystems/wdt-rpi
+IMU - SPI: https://ozzmaker.com/connecting-berryimuv3-via-spi-to-a-raspberry-pi/
+IMU: https://github.com/ozzmaker/BerryIMU/tree/master/python-BerryIMUv3-SPI
+GPS: https://ozzmaker.com/how-to-access-gps-nema-sentences-through-usb-on-the-berrygps-gsm/
+GMS - PPP: https://ozzmaker.com/berrygps-gsm-using-gps-and-connecting-via-3g-2g-using-ppp/
+GMS: https://ozzmaker.com/berrygps-gsm-using-gps-and-connecting-via-3g-2g-using-ppp/
+Hologram CLI: https://www.hologram.io/references/hologram-command-line-interface
