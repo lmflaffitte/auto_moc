@@ -5,6 +5,7 @@ sys.path.insert(1, '../8relay-rpi/python/')
 import lib8relay
 sys.path.insert(1, '../BerryIMU/python-BerryIMUv3-SPI')
 import berryIMUspi, IMU
+from Hologram.HologramCloud import HologramCloud
 
 ### Initialize Blynk ###
 blynk = BlynkLib.Blynk('LvtQ5eL-1to3mBm8GXblYgoqPAjZm4zH',
@@ -61,6 +62,7 @@ def rear_led(value):
 @blynk.VIRTUAL_WRITE(8)
 def alarm(value):
 	current_date = datetime.datetime.now()
+	hologram = HologramCloud(None, network='cellular')
 	### fuel pump de-activation ###
 	print ('Alarm Status: {}'.format(int(value[0])))
 	if int(value[0]) == 1:
@@ -70,6 +72,11 @@ def alarm(value):
 		lib8relay.set(1,8,int(value[0]))
 		blynk.virtual_write(14, "DISABLED")
 		blynk.virtual_write(13, current_date.strftime("%Y-%m-%d %H:%M:%S"))
+		### print GPS Static data ###
+		gga_data = gather_gga_data()
+		blynk.virtual_write(25, gga_data[0])
+		blynk.virtual_write(26, gga_data[1])
+		blynk.virtual_write(35, gga_data[2])
 	else:
 		lib8relay.set(1,1,int(value[0]))
 		blynk.virtual_write(14, "ENABLED")
@@ -148,6 +155,28 @@ def send_imu_data(vpin_num = 101):
 	blynk.virtual_write(32, ACCx)
 	blynk.virtual_write(33, ACCy)
 	blynk.virtual_write(34, ACCz)
+
+
+### GATHER HOLOGRAM DATA ###
+
+def gather_hologram_data():
+	hologram = HologramCloud(None, network='cellular')
+	signal_strength = hologram.network.signal_strength
+	operator = hologram.network.operator
+	rssi, qual = signal_strength.split(',')
+	return rssi, qual, operator
+
+### SEND GMS DATA TO BLYNK ###
+
+@timer.register(vpin_num = 102, interval = 30, run_once = False)
+def send_gms_data(vpin_num = 102):
+	### print GMS data ###
+	rssi = gather_hologram_data()[0]
+	qual = gather_hologram_data()[1]
+	operator = gather_hologram_data()[2]
+	blynk.virtual_write(27, rssi)
+	blynk.virtual_write(28, qual)
+	blynk.virtual_write(29, operator)
 
 ### WHILE LOOP TO RUN BLYNK ###
 
