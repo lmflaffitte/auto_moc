@@ -74,11 +74,14 @@ def alarm(value):
 		blynk.virtual_write(13, current_date.strftime("%Y-%m-%d %H:%M:%S"))
 		### print GPS Static data ###
 		gga_data = gather_gga_data()
-		blynk.virtual_write(25, gga_data[0])
-		blynk.virtual_write(26, gga_data[1])
-		blynk.virtual_write(35, gga_data[2])
+		vehicle_lat = gga_data[0]
+		vehicle_lon = gga_data[1]
+		vehicle_alt = gga_data[2]
+		blynk.virtual_write(25, vehicle_lat)
+		blynk.virtual_write(26, vehicle_lon)
+		blynk.virtual_write(35, vehicle_alt)
 	else:
-		lib8relay.set(1,1,int(value[0]))
+		lib8relay.set(1,8,int(value[0]))
 		blynk.virtual_write(14, "ENABLED")
 
 ### Gather GPS Data ###
