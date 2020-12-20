@@ -12,7 +12,17 @@ General Configuration
 - A script was written to pipe GPS data through the USB serial port that runs on the rPi boot.
 
 Relay Control and Mapping
+The Sequent Microsystems 8Relay card has the following relays:
 
+Relay   Power    Connections     Function
+1       4A       COM, NO, NC     Fuel Pump (NC)
+2       4A       COM, NO, NC     Left Side LED Pods (NO)
+3       8A       COM, NO         Right Side LED Pods (NO)
+4       8A       COM, NO         Ditch Lights LED Pods (NO)
+5       4A       COM, NO, NC     Bumper LED Pods (NO)
+6       4A       COM, NO, NC     Rooftop LED (NO) - controls a 40A relay
+7       8A       COM, NO         Water Pump and Purifier(NO)
+8       8A       COM, NO         GRMS Radio
 
 Alarm System
 - Once the alarm is armed, a number of functions occur:
