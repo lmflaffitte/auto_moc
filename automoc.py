@@ -1,11 +1,13 @@
-import BlynkLib, blynktimer, datetime, time, io, pynmea2, serial
+import BlynkLib, blynktimer, datetime, time, io, pynmea2, serial, threading
 from codecs import open
 import sys
 sys.path.insert(1, '../8relay-rpi/python/')
 import lib8relay
 sys.path.insert(1, '../BerryIMU/python-BerryIMUv3-SPI')
 import berryIMUspi, IMU
+import gather_gpsd
 from Hologram.HologramCloud import HologramCloud
+from ISStreamer.Streamer import Streamer
 
 ### Initialize Blynk ###
 blynk = BlynkLib.Blynk('LvtQ5eL-1to3mBm8GXblYgoqPAjZm4zH',
@@ -21,7 +23,7 @@ timer = blynktimer.Timer()
 
 ### Define Global Variables ###
 degree_sign = u"\N{DEGREE SIGN}"
-
+gpsd = None
 
 ### Write to LED Control Virtual Pins ###
 @blynk.VIRTUAL_WRITE(6)
@@ -73,10 +75,10 @@ def alarm(value):
 		blynk.virtual_write(14, "DISABLED")
 		blynk.virtual_write(13, current_date.strftime("%Y-%m-%d %H:%M:%S"))
 		### print GPS Static data ###
-		gga_data = gather_gga_data()
-		vehicle_lat = gga_data[0]
-		vehicle_lon = gga_data[1]
-		vehicle_alt = gga_data[2]
+		gps_data = gather_gps_data()
+		vehicle_lat = gps_data[0]
+		vehicle_lon = gps_data[1]
+		vehicle_alt = gps_data[2]
 		blynk.virtual_write(25, vehicle_lat)
 		blynk.virtual_write(26, vehicle_lon)
 		blynk.virtual_write(35, vehicle_alt)
@@ -85,8 +87,19 @@ def alarm(value):
 		blynk.virtual_write(14, "ENABLED")
 
 ### Gather GPS Data ###
-def gather_gga_data():
 
+def gather_gps_data():
+	lat = gather_gpsd.readCoordinates()[0]
+	lon = gather_gpsd.readCoordinates()[1]
+	alt = gather_gpsd.readCoordinates()[2]
+	speed = gather_gpsd.readCoordinates()[3]
+	climb = gather_gpsd.readCoordinates()[4]
+	fixtype = gather_gpsd.readCoordinates()[6]
+
+	gps_data = [lat, lon, alt, speed, climb, fixtype]
+	return gps_data
+
+def gather_gga_data():
         ### POINTS VARIABLE TO PROPER SERIAL PORT ###
         ser = serial.Serial("/dev/ttyACM3",115200)
         ### WHILE LOOP TO KEEP READING DATA-STREAM ###
@@ -124,17 +137,16 @@ def gather_rmc_data():
 			return sog
 
 ### SEND GPS DATA TO BLYNK ###
-@timer.register(vpin_num = 100, interval = 10, run_once = False)
+@timer.register(vpin_num = 100, interval = 5, run_once = False)
 def send_gps_data(vpin_num = 100):
-	rmc_data = gather_rmc_data()
-	gga_data = gather_gga_data()
+	gps_data = gather_gps_data()
 
 	#print (str(data))
-	blynk.virtual_write(20, gga_data[0])
-	blynk.virtual_write(21, gga_data[1])
-	blynk.virtual_write(22, gga_data[2])
-	blynk.virtual_write(23, gga_data[4])
-	blynk.virtual_write(24, rmc_data)
+	blynk.virtual_write(20, gps_data[0])
+	blynk.virtual_write(21, gps_data[1])
+	blynk.virtual_write(22, gps_data[2])
+	blynk.virtual_write(23, gps_data[3])
+	blynk.virtual_write(24, gps_data[4])
 
 
 
@@ -192,4 +204,5 @@ try:
 
 except KeyboardInterrupt:
 	blynk.disconnect()
+	gather_gpsd.kill_thread()
 	print ('SCRIPT WAS INTERRUPTED')
