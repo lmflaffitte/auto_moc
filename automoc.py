@@ -1,4 +1,5 @@
-import BlynkLib, blynktimer, datetime, time, io, pynmea2, serial, threading
+import blynklib, blynktimer, datetime, time, io, serial, threading
+from geopy import distance
 from codecs import open
 import sys
 sys.path.insert(1, '../8relay-rpi/python/')
@@ -10,7 +11,7 @@ from Hologram.HologramCloud import HologramCloud
 from ISStreamer.Streamer import Streamer
 
 ### Initialize Blynk ###
-blynk = BlynkLib.Blynk('LvtQ5eL-1to3mBm8GXblYgoqPAjZm4zH',
+blynk = blynklib.Blynk('ge_FQJIPSVaAhQXvsCw8gMW-LwXmZNZx',
 			server='10.0.0.9',
 			port=8080,
 			heartbeat=30
@@ -26,55 +27,65 @@ degree_sign = u"\N{DEGREE SIGN}"
 gpsd = None
 
 ### Write to LED Control Virtual Pins ###
-@blynk.VIRTUAL_WRITE(6)
-def rt_led_lightbar(value):
+@blynk.handle_event('write V6')
+def rt_led_lightbar(pin,value):
 	print ('RT LED Lightbar Status: {}'.format(int(value[0])))
 	lib8relay.set(1,6,int(value[0]))
 
-@blynk.VIRTUAL_WRITE(4)
-def ditch_light_led(value):
+@blynk.handle_event('write V4')
+def ditch_light_led(pin,value):
         print ('Ditch Light LED Pods Status: {}'.format(int(value[0])))
         lib8relay.set(1,4,int(value[0]))
 
-@blynk.VIRTUAL_WRITE(2)
-def left_side_led(value):
+@blynk.handle_event('write V2')
+def left_side_led(pin,value):
         print ('Left Side LED Pods Status: {}'.format(int(value[0])))
         lib8relay.set(1,2,int(value[0]))
 
-@blynk.VIRTUAL_WRITE(3)
-def right_side_led(value):
+@blynk.handle_event('write V3')
+def right_side_led(pin,value):
         print ('Right Side LED Pods Status: {}'.format(int(value[0])))
         lib8relay.set(1,3,int(value[0]))
 
-@blynk.VIRTUAL_WRITE(5)
-def rear_led(value):
+@blynk.handle_event('write V5')
+def rear_led(pin,value):
         print ('Rear LED Pods Status: {}'.format(int(value[0])))
         lib8relay.set(1,5,int(value[0]))
 
 ### Water Pump and UV Filter Powering ###
 
-@blynk.VIRTUAL_WRITE(7)
-def rear_led(value):
+@blynk.handle_event('write V7')
+def rear_led(pin,value):
         print ('Water Pump and UV Filter Power: {}'.format(int(value[0])))
         lib8relay.set(1,7,int(value[0]))
 
 
+### GMRS Radio Power ###
+@blynk.handle_event('write V8')
+def gmrs_power(pin,value):
+	print ('GMRS Radio Power: {}'.format(int(value[0])))
+	lib8relay.set(1,7,int(value[0]))
+
+
 ### Alarm system handling ###
 
-@blynk.VIRTUAL_WRITE(8)
-def alarm(value):
+@blynk.handle_event('write V1')
+def alarm(pin,value):
 	current_date = datetime.datetime.now()
-	hologram = HologramCloud(None, network='cellular')
+	credentials = {'devicekey': 'LMaCQ?]G'}
+	hologram = HologramCloud(credentials, network='cellular', authentication_type='csrpsk')
+
 	### fuel pump de-activation ###
 	print ('Alarm Status: {}'.format(int(value[0])))
 	if int(value[0]) == 1:
 		print('Disabling Fuel Pump in 10 Seconds')
 		time.sleep(10)
 		print('Disabling Fuel Pump')
-		lib8relay.set(1,8,int(value[0]))
+		lib8relay.set(1,1,int(value[0]))
 		blynk.virtual_write(14, "DISABLED")
 		blynk.virtual_write(13, current_date.strftime("%Y-%m-%d %H:%M:%S"))
-		### print GPS Static data ###
+
+		### gather/write GPS vehicle data ###
 		gps_data = gather_gps_data()
 		vehicle_lat = gps_data[0]
 		vehicle_lon = gps_data[1]
@@ -83,15 +94,54 @@ def alarm(value):
 		blynk.virtual_write(26, vehicle_lon)
 		blynk.virtual_write(35, vehicle_alt)
 
+		### send activation SMS ###
+		recv = hologram.sendSMS('+12069725002', 'AutoMOC Alarm Enabled. System has confirmed network connectivity')
+		print('RESPONSE MESSAGE: ' + hologram.getResultString(recv))
+
+
+		### geofence alarm ###
+		vehicle_location = (vehicle_lat, vehicle_lon)
+		while True:
+			if int(value[0]) == 1:
+				current_location = (gps_data[0], gps_data[1])
+				displacement = distance.distance(vehicle_location, current_location).m
+				alarm_trigger = 50
+
+				### trigger alarm ###
+				if int(value[0]) == 1 and displacement > alarm_trigger:
+					alarm_recv = hologram.sendSMS('+12069725002', 'AutoMOC Geofence Alarm TRIPPED. Go to InitialState.com for real-time tracking updates.')
+					print('RESPONSE MESSAGE: ' + hologram.getResultString(alarm_recv))
+					streamer = Streamer(bucket_name="GPS_Tracker", bucket_key="GPS_Tracker", access_key="ist_xWKrfgU6MntKcQukAg0ohqZ0Dh7FFQYb")
+
+					while True:
+						print 'GPS ' , gpsd.utc,'--> CPU time->',datetime.datetime.now().time() ,
+          					streamer.log("Location", "{lat},{lon}".format(lat=gps_data[0],lon=gps_data[1]))
+          					streamer.log("speed",gpsd.gps_data[3])
+						time.sleep(10)
+
+				### alarm not triggered but armed ###
+				elif int(value[0]) == 1 and displacement < alarm_trigger:
+					continue
+
+				### alarm toggled off ###
+				elif int(value[0]) == 0:
+					break
+				continue
+
+				time.sleep(5)
+			else:
+				break
+
+
 	else:
-		lib8relay.set(1,8,int(value[0]))
+		lib8relay.set(1,1,int(value[0]))
 		blynk.virtual_write(14, "ENABLED")
 
 ### Gather GPS Data ###
 
 def gather_gps_data():
-	lat = gather_gpsd.readCoordinates()[0]
-	lon = gather_gpsd.readCoordinates()[1]
+	lat = round(gather_gpsd.readCoordinates()[0],3)
+	lon = round(gather_gpsd.readCoordinates()[1],3)
 	alt = gather_gpsd.readCoordinates()[2]
 	speed = gather_gpsd.readCoordinates()[3]
 	climb = gather_gpsd.readCoordinates()[4]
@@ -117,16 +167,16 @@ def send_gps_data(vpin_num = 100):
 ### SEND IMU DATA TO BLYNK ###
 @timer.register(vpin_num = 101, interval = 1, run_once = False)
 def send_imu_data(vpin_num = 101):
-	AccXangle = berryIMUspi.get_imu_data()[0]
-	AccYangle = berryIMUspi.get_imu_data()[1]
-	gyroXangle = berryIMUspi.get_imu_data()[2]
-	gyroYangle = berryIMUspi.get_imu_data()[3]
-	gyroZangle = berryIMUspi.get_imu_data()[4]
-	CFangleX = berryIMUspi.get_imu_data()[5]
-	CFangleY = berryIMUspi.get_imu_data()[6]
-	ACCx = berryIMUspi.get_imu_data()[7]
-	ACCy = berryIMUspi.get_imu_data()[8]
-	ACCz = berryIMUspi.get_imu_data()[9]
+	AccXangle = round(berryIMUspi.get_imud()[0],1)
+	AccYangle = round(berryIMUspi.get_imud()[1],1)
+	gyroXangle = berryIMUspi.get_imud()[2]
+	gyroYangle = berryIMUspi.get_imud()[3]
+	gyroZangle = berryIMUspi.get_imud()[4]
+	CFangleX = berryIMUspi.get_imud()[5]
+	CFangleY = berryIMUspi.get_imud()[6]
+	ACCx = berryIMUspi.get_imud()[7]
+	ACCy = berryIMUspi.get_imud()[8]
+	ACCz = berryIMUspi.get_imud()[9]
 
 	#write Blynk data
 	blynk.virtual_write(30, AccXangle)

@@ -21,7 +21,7 @@ class GpsPoller(threading.Thread):
 
 gpsp = GpsPoller() # create the thread
 
-print "\nStarting GPS Thread"
+print "Starting GPS Thread"
 gpsp.start() #start the thread
 
 def readCoordinates():
