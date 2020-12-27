@@ -15,7 +15,7 @@ Relay Control and Mapping
 The Sequent Microsystems 8Relay card has the following relays:
 
 Relay   Power    Connections     Function
-1       4A       COM, NO, NC     Fuel Pump (NC)
+1       4A       COM, NO, NC     Fuel Pump (NC) - *** Relay ref des is backwards, NO/COM are shorted when relay is disactivated, NC/COM relay is activated
 2       4A       COM, NO, NC     Left Side LED Pods (NO)
 3       8A       COM, NO         Right Side LED Pods (NO)
 4       8A       COM, NO         Ditch Lights LED Pods (NO)
