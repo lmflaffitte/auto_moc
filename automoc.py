@@ -1,4 +1,4 @@
-import blynklib, blynktimer, datetime, time, io, serial, threading
+import blynklib, blynktimer, datetime, time, io, serial, threading, math
 from geopy import distance
 from codecs import open
 import sys
@@ -56,8 +56,8 @@ def rear_led(pin,value):
 
 @blynk.handle_event('write V7')
 def rear_led(pin,value):
-        print ('Water Pump and UV Filter Power: {}'.format(int(value[0])))
-        lib8relay.set(1,7,int(value[0]))
+	print ('Water Pump and UV Filter Power: {}'.format(int(value[0])))
+	lib8relay.set(1,7,int(value[0]))
 
 
 ### GMRS Radio Power ###
@@ -95,36 +95,50 @@ def alarm(pin,value):
 		blynk.virtual_write(35, vehicle_alt)
 
 		### send activation SMS ###
-		recv = hologram.sendSMS('+12069725002', 'AutoMOC Alarm Enabled. System has confirmed network connectivity')
-		print('RESPONSE MESSAGE: ' + hologram.getResultString(recv))
+#		recv = hologram.sendSMS('+12069725002', 'AutoMOC Alarm Enabled. System has confirmed network connectivity')
+#		print('RESPONSE MESSAGE: ' + hologram.getResultString(recv))
 
 
 		### geofence alarm ###
 		vehicle_location = (vehicle_lat, vehicle_lon)
+		print(vehicle_location)
+		time.sleep(5)
 		while True:
+			print('Checking Alarm Status and Geofence alarm')
 			if int(value[0]) == 1:
-				current_location = (gps_data[0], gps_data[1])
-				displacement = distance.distance(vehicle_location, current_location).m
+				alarm_gps_data = gather_gps_data()
+	                	alarm_lat = alarm_gps_data[0]
+        		        alarm_lon = alarm_gps_data[1]
+				current_location = (alarm_lat, alarm_lon)
+				#print(current_location)
+				displacement = distance.distance(vehicle_location, current_location).km
+				#print(displacement)
 				alarm_trigger = 50
 
 				### trigger alarm ###
 				if int(value[0]) == 1 and displacement > alarm_trigger:
+
+					print('Geofence Alarm TRIPPED')
 					alarm_recv = hologram.sendSMS('+12069725002', 'AutoMOC Geofence Alarm TRIPPED. Go to InitialState.com for real-time tracking updates.')
 					print('RESPONSE MESSAGE: ' + hologram.getResultString(alarm_recv))
 					streamer = Streamer(bucket_name="GPS_Tracker", bucket_key="GPS_Tracker", access_key="ist_xWKrfgU6MntKcQukAg0ohqZ0Dh7FFQYb")
 
 					while True:
-						print 'GPS ' , gpsd.utc,'--> CPU time->',datetime.datetime.now().time() ,
-          					streamer.log("Location", "{lat},{lon}".format(lat=gps_data[0],lon=gps_data[1]))
-          					streamer.log("speed",gpsd.gps_data[3])
+						print('Streaming data to InitialState.com')
+						print 'CPU time->',datetime.datetime.now().time() ,
+          					streamer.log("Location", "{lat},{lon}".format(lat=gather_gps_data()[0],lon=gather_gps_data()[1]))
+          					streamer.log("speed",gather_gps_data()[3])
 						time.sleep(10)
 
 				### alarm not triggered but armed ###
 				elif int(value[0]) == 1 and displacement < alarm_trigger:
+					print('Alarm not tripped, continuing period checks')
+					time.sleep(5)
 					continue
 
 				### alarm toggled off ###
 				elif int(value[0]) == 0:
+					print('Alarm toggled off-1')
 					break
 				continue
 
@@ -134,14 +148,15 @@ def alarm(pin,value):
 
 
 	else:
+		print('Alarm toggled off-2')
 		lib8relay.set(1,1,int(value[0]))
 		blynk.virtual_write(14, "ENABLED")
 
 ### Gather GPS Data ###
 
 def gather_gps_data():
-	lat = round(gather_gpsd.readCoordinates()[0],3)
-	lon = round(gather_gpsd.readCoordinates()[1],3)
+	lat = gather_gpsd.readCoordinates()[0]
+	lon = gather_gpsd.readCoordinates()[1]
 	alt = gather_gpsd.readCoordinates()[2]
 	speed = gather_gpsd.readCoordinates()[3]
 	climb = gather_gpsd.readCoordinates()[4]
@@ -156,8 +171,8 @@ def send_gps_data(vpin_num = 100):
 	gps_data = gather_gps_data()
 
 	#print (str(data))
-	blynk.virtual_write(20, gps_data[0])
-	blynk.virtual_write(21, gps_data[1])
+	blynk.virtual_write(20, round(gps_data[0],5))
+	blynk.virtual_write(21, round(gps_data[1],5))
 	blynk.virtual_write(22, gps_data[2])
 	blynk.virtual_write(23, gps_data[3])
 	blynk.virtual_write(24, gps_data[4])
