@@ -71,86 +71,73 @@ def gmrs_power(pin,value):
 
 @blynk.handle_event('write V1')
 def alarm(pin,value):
+	print('Alarm Status: {}'.format(int(value[0])))
 	current_date = datetime.datetime.now()
 	credentials = {'devicekey': 'LMaCQ?]G'}
 	hologram = HologramCloud(credentials, network='cellular', authentication_type='csrpsk')
 
+
 	### fuel pump de-activation ###
-	print ('Alarm Status: {}'.format(int(value[0])))
 	if int(value[0]) == 1:
-		print('Disabling Fuel Pump in 10 Seconds')
+		print ('Disabling Fuel Pump in 10 Seconds')
 		time.sleep(10)
-		print('Disabling Fuel Pump')
+		print ('Disabling Fuel Pump')
 		lib8relay.set(1,1,int(value[0]))
 		blynk.virtual_write(14, "DISABLED")
 		blynk.virtual_write(13, current_date.strftime("%Y-%m-%d %H:%M:%S"))
 
 		### gather/write GPS vehicle data ###
-		gps_data = gather_gps_data()
-		vehicle_lat = gps_data[0]
-		vehicle_lon = gps_data[1]
-		vehicle_alt = gps_data[2]
+		vehicle_lat = gather_gps_data()[0]
+		vehicle_lon = gather_gps_data()[1]
+		vehicle_alt = gather_gps_data()[2]
 		blynk.virtual_write(25, vehicle_lat)
 		blynk.virtual_write(26, vehicle_lon)
 		blynk.virtual_write(35, vehicle_alt)
+		vehicle_location = (vehicle_lat, vehicle_lon)
+
+		print (vehicle_location)
 
 		### send activation SMS ###
-#		recv = hologram.sendSMS('+12069725002', 'AutoMOC Alarm Enabled. System has confirmed network connectivity')
-#		print('RESPONSE MESSAGE: ' + hologram.getResultString(recv))
+		recv = hologram.sendSMS('+12069725002', 'AutoMOC Alarm Enabled. System has confirmed network connectivity')
+		print ('RESPONSE MESSAGE: ' + hologram.getResultString(recv))
 
-
-		### geofence alarm ###
-		vehicle_location = (vehicle_lat, vehicle_lon)
-		print(vehicle_location)
-		time.sleep(5)
-		while True:
-			print('Checking Alarm Status and Geofence alarm')
-			if int(value[0]) == 1:
-				alarm_gps_data = gather_gps_data()
-	                	alarm_lat = alarm_gps_data[0]
-        		        alarm_lon = alarm_gps_data[1]
-				current_location = (alarm_lat, alarm_lon)
-				#print(current_location)
-				displacement = distance.distance(vehicle_location, current_location).km
-				#print(displacement)
-				alarm_trigger = 50
-
-				### trigger alarm ###
-				if int(value[0]) == 1 and displacement > alarm_trigger:
-
-					print('Geofence Alarm TRIPPED')
-					alarm_recv = hologram.sendSMS('+12069725002', 'AutoMOC Geofence Alarm TRIPPED. Go to InitialState.com for real-time tracking updates.')
-					print('RESPONSE MESSAGE: ' + hologram.getResultString(alarm_recv))
-					streamer = Streamer(bucket_name="GPS_Tracker", bucket_key="GPS_Tracker", access_key="ist_xWKrfgU6MntKcQukAg0ohqZ0Dh7FFQYb")
-
-					while True:
-						print('Streaming data to InitialState.com')
-						print 'CPU time->',datetime.datetime.now().time() ,
-          					streamer.log("Location", "{lat},{lon}".format(lat=gather_gps_data()[0],lon=gather_gps_data()[1]))
-          					streamer.log("speed",gather_gps_data()[3])
-						time.sleep(10)
-
-				### alarm not triggered but armed ###
-				elif int(value[0]) == 1 and displacement < alarm_trigger:
-					print('Alarm not tripped, continuing period checks')
-					time.sleep(5)
-					continue
-
-				### alarm toggled off ###
-				elif int(value[0]) == 0:
-					print('Alarm toggled off-1')
-					break
-				continue
-
-				time.sleep(5)
-			else:
-				break
-
-
+		### start geofence alarm ###
+		timer.start('run_geofence_alarm(vehicle_location)')
 	else:
-		print('Alarm toggled off-2')
+		timer.stop('run_geofence_alarm')
+		timer.stop('stream_gps')
+		print ('Alarm toggled off')
 		lib8relay.set(1,1,int(value[0]))
 		blynk.virtual_write(14, "ENABLED")
+
+### Alarm Timers ###
+
+@timer.register(vpin_num = 103, interval = 10, stopped = True)
+def run_geofence_alarm(vpin_num = 103, vehicle_location):
+        print('Geofence Check')
+        current_location = (gather_gps_data()[0], gather_gps_data()[0])
+        print (current_location)
+        displacement = distance.distance(vehicle_location, current_location).km
+        print(displacement + 'km')
+        alarm_trigger = .02
+        if displacement > alarm_trigger:
+                print('Geofence Alarm TRIPPED')
+                alarm_recv = hologram.sendSMS('+12069725002', 'AutoMOC Geofence Alarm TRIPPED. Go to InitialState.com for real-time tracking updates.')
+                print('RESPONSE MESSAGE: ' + hologram.getResultString(alarm_recv))
+                timer.start('stream_gps()')
+                timer.stop('run_geofence_alarm()')
+        else:
+                print('Alarm not tripped, continuing period checks')
+
+
+@timer.register(vpin_num = 104, interval = 10, stopped = True)
+def stream_gps(vpin_num = 104):
+        print('Streaming data to InitialState.com')
+        print 'CPU time->',datetime.datetime.now().time() ,
+        streamer.log("Location", "{lat},{lon}".format(lat=gather_gps_data()[0],lon=gather_gps_data()[1]))
+        streamer.log("speed",gather_gps_data()[3])
+
+
 
 ### Gather GPS Data ###
 
@@ -160,9 +147,10 @@ def gather_gps_data():
 	alt = gather_gpsd.readCoordinates()[2]
 	speed = gather_gpsd.readCoordinates()[3]
 	climb = gather_gpsd.readCoordinates()[4]
-	fixtype = gather_gpsd.readCoordinates()[6]
+	track = gather_gpsd.readCoordinates()[5]
+	utc_time = gather_gpsd.readCoordinates()[6]
 
-	gps_data = [lat, lon, alt, speed, climb, fixtype]
+	gps_data = [lat, lon, alt, speed, climb, track, time]
 	return gps_data
 
 ### SEND GPS DATA TO BLYNK ###
@@ -176,6 +164,7 @@ def send_gps_data(vpin_num = 100):
 	blynk.virtual_write(22, gps_data[2])
 	blynk.virtual_write(23, gps_data[3])
 	blynk.virtual_write(24, gps_data[4])
+	blynk.virtual_write(33, gps_data[5])
 
 
 
@@ -221,6 +210,7 @@ def send_gms_data(vpin_num = 102):
 	blynk.virtual_write(27, rssi)
 	blynk.virtual_write(28, qual)
 	blynk.virtual_write(29, operator)
+
 
 ### WHILE LOOP TO RUN BLYNK ###
 

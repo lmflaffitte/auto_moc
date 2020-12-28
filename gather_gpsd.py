@@ -32,8 +32,7 @@ def readCoordinates():
 	alt = gpsd.fix.altitude
 	climb = gpsd.fix.climb
 	track = gpsd.fix.track
-	fixtype = gpsd.fix.mode
-	coords = [lat, lon, alt, speed, climb, track, fixtype]
+	coords = [lat, lon, alt, speed, climb, track, time]
 
 	return coords
 
