@@ -64,7 +64,7 @@ def rear_led(pin,value):
 @blynk.handle_event('write V8')
 def gmrs_power(pin,value):
 	print ('GMRS Radio Power: {}'.format(int(value[0])))
-	lib8relay.set(1,7,int(value[0]))
+	lib8relay.set(1,8,int(value[0]))
 
 
 ### Alarm system handling ###
@@ -95,8 +95,8 @@ def alarm(pin,value):
 		blynk.virtual_write(35, vehicle_alt)
 
 		### send activation SMS ###
-#		recv = hologram.sendSMS('+12069725002', 'AutoMOC Alarm Enabled. System has confirmed network connectivity')
-#		print('RESPONSE MESSAGE: ' + hologram.getResultString(recv))
+		recv = hologram.sendSMS('+12069725002', 'AutoMOC Alarm Enabled. System has confirmed network connectivity')
+		print('RESPONSE MESSAGE: ' + hologram.getResultString(recv))
 
 
 		### geofence alarm ###
@@ -151,6 +151,7 @@ def alarm(pin,value):
 		print('Alarm toggled off-2')
 		lib8relay.set(1,1,int(value[0]))
 		blynk.virtual_write(14, "ENABLED")
+
 
 ### Gather GPS Data ###
 
@@ -221,6 +222,12 @@ def send_gms_data(vpin_num = 102):
 	blynk.virtual_write(27, rssi)
 	blynk.virtual_write(28, qual)
 	blynk.virtual_write(29, operator)
+
+### ADC Handling ###
+
+
+
+
 
 ### WHILE LOOP TO RUN BLYNK ###
 
