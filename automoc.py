@@ -213,7 +213,7 @@ def gather_hologram_data():
 
 ### SEND GMS DATA TO BLYNK ###
 
-@timer.register(vpin_num = 102, interval = 30, run_once = False)
+@timer.register(vpin_num = 102, interval = 60, run_once = False)
 def send_gms_data(vpin_num = 102):
 	### print GMS data ###
 	rssi = gather_hologram_data()[0]
