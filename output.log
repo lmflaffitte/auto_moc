@@ -1,0 +1,48 @@
+Found BerryIMUv3 (LSM6DSL)
+Starting GPS Thread
+
+        ___  __          __
+       / _ )/ /_ _____  / /__
+      / _  / / // / _ \/  '_/
+     /____/_/\_, /_//_/_/\_\
+            /___/ for Python v0.2.6
+
+Welcome to the 4Runner MOC, powered by Raspberry Pi
+Right Side LED Pods Status: 1
+Right Side LED Pods Status: 0
+RT LED Lightbar Status: 1
+RT LED Lightbar Status: 0
+RT LED Lightbar Status: 0
+Left Side LED Pods Status: 1
+Left Side LED Pods Status: 0
+Ditch Light LED Pods Status: 1
+Ditch Light LED Pods Status: 0
+Rear LED Pods Status: 1
+Rear LED Pods Status: 0
+Right Side LED Pods Status: 1
+Right Side LED Pods Status: 0
+Alarm Status: 0
+Alarm toggled off-2
+Right Side LED Pods Status: 1
+Right Side LED Pods Status: 0
+Traceback (most recent call last):
+  File "automoc.py", line 241, in <module>
+  File "/usr/local/lib/python3.7/dist-packages/blynktimer.py", line 102, in run
+  File "/usr/local/lib/python3.7/dist-packages/blynktimer.py", line 102, in <listcomp>
+  File "/usr/local/lib/python3.7/dist-packages/blynktimer.py", line 127, in run
+  File "automoc.py", line 221, in send_gms_data
+  File "automoc.py", line 210, in gather_hologram_data
+  File "/usr/local/lib/python3.7/dist-packages/Hologram/HologramCloud.py", line 70, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/Hologram/CustomCloud.py", line 35, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/Hologram/Cloud.py", line 36, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/Hologram/Cloud.py", line 50, in initializeNetwork
+  File "/usr/local/lib/python3.7/dist-packages/Hologram/Network/NetworkManager.py", line 37, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/Hologram/Network/NetworkManager.py", line 62, in network
+  File "/usr/local/lib/python3.7/dist-packages/Hologram/Network/Cellular.py", line 42, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/Hologram/Network/Route.py", line 23, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/pyroute2/iproute/linux.py", line 134, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/pyroute2/netlink/rtnl/iprsocket.py", line 31, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/pyroute2/netlink/nlsocket.py", line 388, in __init__
+  File "/usr/local/lib/python3.7/dist-packages/pyroute2/netlink/nlsocket.py", line 971, in post_init
+  File "/usr/lib/python3.7/socket.py", line 151, in __init__
+OSError: [Errno 24] Too many open files
