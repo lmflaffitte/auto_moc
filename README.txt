@@ -44,10 +44,10 @@ Phone and Raspberry Pi must be on same network. If this is run in the car, the R
 Run the AutoMoc.py Script:
 
 $cd tools/auto_moc
-$python automoc.py
+$sudo python automoc.py
 
-Run the script in the background
-$nohup python automoc.py
+Run the script in the background, output to log file, and remove buffering
+$sudo nohup python3.7 -u automoc.py > output.log
 
 Cancel the script that's running in the background
 $killall python
