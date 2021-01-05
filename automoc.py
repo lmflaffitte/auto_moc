@@ -97,26 +97,26 @@ def alarm(pin,value):
 		### send activation SMS ###
 		recv = hologram.sendSMS('+12069725002', 'AutoMOC Alarm Enabled. System has confirmed network connectivity')
 		print('RESPONSE MESSAGE: ' + hologram.getResultString(recv))
-
+		print ('Sending text')
 
 		### geofence alarm ###
 		vehicle_location = (vehicle_lat, vehicle_lon)
-		print(vehicle_location)
+		print (vehicle_location)
 		time.sleep(5)
 		while True:
 			print('Checking Alarm Status and Geofence alarm')
 			if int(value[0]) == 1:
 				alarm_gps_data = gather_gps_data()
-	                	alarm_lat = alarm_gps_data[0]
-        		        alarm_lon = alarm_gps_data[1]
+				alarm_lat = alarm_gps_data[0]
+				alarm_lon = alarm_gps_data[1]
 				current_location = (alarm_lat, alarm_lon)
-				#print(current_location)
+				print (current_location)
 				displacement = distance.distance(vehicle_location, current_location).km
-				#print(displacement)
-				alarm_trigger = 50
+				print (displacement)
+				alarm_trigger = 30
 
 				### trigger alarm ###
-				if int(value[0]) == 1 and displacement > alarm_trigger:
+				if int(value[0]) ==1  and displacement > alarm_trigger:
 
 					print('Geofence Alarm TRIPPED')
 					alarm_recv = hologram.sendSMS('+12069725002', 'AutoMOC Geofence Alarm TRIPPED. Go to InitialState.com for real-time tracking updates.')
@@ -124,12 +124,12 @@ def alarm(pin,value):
 					streamer = Streamer(bucket_name="GPS_Tracker", bucket_key="GPS_Tracker", access_key="ist_xWKrfgU6MntKcQukAg0ohqZ0Dh7FFQYb")
 
 					while True:
-						print('Streaming data to InitialState.com')
-						print 'CPU time->',datetime.datetime.now().time() ,
-          					streamer.log("Location", "{lat},{lon}".format(lat=gather_gps_data()[0],lon=gather_gps_data()[1]))
-          					streamer.log("speed",gather_gps_data()[3])
+						print ('Streaming data to InitialState.com')
+						print ( 'CPU time->' + datetime.now().time())
+						streamer.log("Location", "{lat},{lon}".format(lat=gather_gps_data()[0],lon=gather_gps_data()[1]))
+						streamer.log("speed",gather_gps_data()[3])
 						time.sleep(10)
-
+					continue
 				### alarm not triggered but armed ###
 				elif int(value[0]) == 1 and displacement < alarm_trigger:
 					print('Alarm not tripped, continuing period checks')
@@ -183,8 +183,10 @@ def send_gps_data(vpin_num = 100):
 ### SEND IMU DATA TO BLYNK ###
 @timer.register(vpin_num = 101, interval = 1, run_once = False)
 def send_imu_data(vpin_num = 101):
-	AccXangle = round(berryIMUspi.get_imud()[0],1)
-	AccYangle = round(berryIMUspi.get_imud()[1],1)
+	pitch_offset = 2.4
+	roll_offset = 0.8
+	AccXangle = round(berryIMUspi.get_imud()[0],1) + pitch_offset
+	AccYangle = round(berryIMUspi.get_imud()[1],1) + roll_offset
 	gyroXangle = berryIMUspi.get_imud()[2]
 	gyroYangle = berryIMUspi.get_imud()[3]
 	gyroZangle = berryIMUspi.get_imud()[4]
@@ -213,7 +215,7 @@ def gather_hologram_data():
 
 ### SEND GMS DATA TO BLYNK ###
 
-@timer.register(vpin_num = 102, interval = 60, run_once = False)
+@timer.register(vpin_num = 102, interval = 31, run_once = False)
 def send_gms_data(vpin_num = 102):
 	### print GMS data ###
 	rssi = gather_hologram_data()[0]
@@ -235,7 +237,7 @@ print('Welcome to the 4Runner MOC, powered by Raspberry Pi')
 
 try:
 	while True:
-    		blynk.run()
+		blynk.run()
 		timer.run()
 
 except KeyboardInterrupt:

@@ -21,7 +21,7 @@ class GpsPoller(threading.Thread):
 
 gpsp = GpsPoller() # create the thread
 
-print "Starting GPS Thread"
+print ("Starting GPS Thread")
 gpsp.start() #start the thread
 
 def readCoordinates():
@@ -38,6 +38,6 @@ def readCoordinates():
 	return coords
 
 def kill_thread():
-	print "\nKilling GPS Thread..."
+	print ("\nKilling GPS Thread...")
 	gpsp.running = False
 	gpsp.join() #wait for thread to finish what it's doing
