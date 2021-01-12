@@ -7,42 +7,1569 @@ Starting GPS Thread
      /____/_/\_, /_//_/_/\_\
             /___/ for Python v0.2.6
 
+Start time: 10/01/2021 22:27:46 UTC
 Welcome to the 4Runner MOC, powered by Raspberry Pi
-Right Side LED Pods Status: 1
-Right Side LED Pods Status: 0
-RT LED Lightbar Status: 1
-RT LED Lightbar Status: 0
-RT LED Lightbar Status: 0
-Left Side LED Pods Status: 1
-Left Side LED Pods Status: 0
-Ditch Light LED Pods Status: 1
-Ditch Light LED Pods Status: 0
-Rear LED Pods Status: 1
-Rear LED Pods Status: 0
-Right Side LED Pods Status: 1
-Right Side LED Pods Status: 0
-Alarm Status: 0
-Alarm toggled off-2
-Right Side LED Pods Status: 1
-Right Side LED Pods Status: 0
-Traceback (most recent call last):
-  File "automoc.py", line 241, in <module>
-  File "/usr/local/lib/python3.7/dist-packages/blynktimer.py", line 102, in run
-  File "/usr/local/lib/python3.7/dist-packages/blynktimer.py", line 102, in <listcomp>
-  File "/usr/local/lib/python3.7/dist-packages/blynktimer.py", line 127, in run
-  File "automoc.py", line 221, in send_gms_data
-  File "automoc.py", line 210, in gather_hologram_data
-  File "/usr/local/lib/python3.7/dist-packages/Hologram/HologramCloud.py", line 70, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/Hologram/CustomCloud.py", line 35, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/Hologram/Cloud.py", line 36, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/Hologram/Cloud.py", line 50, in initializeNetwork
-  File "/usr/local/lib/python3.7/dist-packages/Hologram/Network/NetworkManager.py", line 37, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/Hologram/Network/NetworkManager.py", line 62, in network
-  File "/usr/local/lib/python3.7/dist-packages/Hologram/Network/Cellular.py", line 42, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/Hologram/Network/Route.py", line 23, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/pyroute2/iproute/linux.py", line 134, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/pyroute2/netlink/rtnl/iprsocket.py", line 31, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/pyroute2/netlink/nlsocket.py", line 388, in __init__
-  File "/usr/local/lib/python3.7/dist-packages/pyroute2/netlink/nlsocket.py", line 971, in post_init
-  File "/usr/lib/python3.7/socket.py", line 151, in __init__
-OSError: [Errno 24] Too many open files
+Alarm Status: 1
+Disabling Fuel Pump in 10 Seconds
+Disabling Fuel Pump
+RESPONSE MESSAGE: Message sent successfully
+Sending text
+(47.641157833, -122.327992667)
+Checking Alarm Status and Geofence alarm
+(47.641175833, -122.327996)
+0.0020169098538844682
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641169333, -122.327983167)
+0.0014643808927438523
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.64116, -122.3279715)
+0.0016086627873820709
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641156833, -122.327966833)
+0.0019443840651233364
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145833, -122.327953333)
+0.0032427966705895605
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641147333, -122.327947833)
+0.003565430759429635
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641155333, -122.327951833)
+0.003080887854092879
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411575, -122.327957)
+0.002680323612958881
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411645, -122.327965667)
+0.002159991940986921
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641166, -122.327967333)
+0.0021091088767569454
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641172667, -122.327975)
+0.0021171882452776783
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641177333, -122.327978667)
+0.0024098153362155468
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641175333, -122.327978667)
+0.0022118864392815657
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641166667, -122.327976833)
+0.0015428225065227965
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641158667, -122.327978667)
+0.0010560582288170195
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641154167, -122.327986667)
+0.000607783229661764
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641157167, -122.327987667)
+0.0003829344947398372
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641161, -122.327987667)
+0.0005149199186197863
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411635, -122.327988833)
+0.0006928151094482286
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641167167, -122.327987333)
+0.0011124937009787924
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641163667, -122.3279835)
+0.0009461569494801898
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641177333, -122.327992167)
+0.0021684006084845804
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411765, -122.327991333)
+0.0020778785842712074
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411735, -122.327993)
+0.001742089071531141
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641174333, -122.327998)
+0.001877782197920446
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641154833, -122.327989333)
+0.0004171529463827267
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411345, -122.3279785)
+0.0028041586838262007
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139, -122.327982667)
+0.002224658720555887
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411405, -122.327986833)
+0.001976371483095069
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641130833, -122.327982667)
+0.0030945642135187384
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641144333, -122.327998667)
+0.0015672237913144447
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641154167, -122.328007833)
+0.0012102939538816998
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641136833, -122.3279965)
+0.002352547295471781
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411275, -122.327992167)
+0.00337273345760983
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411235, -122.327990333)
+0.0038212842476152992
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108333, -122.327983833)
+0.005543461894128424
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641105667, -122.327985667)
+0.005823791672239432
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410955, -122.327979167)
+0.007004237684596686
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641096333, -122.3279835)
+0.006872382823086904
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641083833, -122.327968)
+0.008433763825778826
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410755, -122.327971667)
+0.009289066872574737
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.64106, -122.327965167)
+0.011071936894830398
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641053333, -122.327964167)
+0.011814372136780446
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641046167, -122.327966)
+0.012576061593231446
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641046, -122.327972167)
+0.012529020177598275
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641043667, -122.32797)
+0.012807119382308987
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641037167, -122.327974833)
+0.013482809596556485
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641030333, -122.32797)
+0.014277830518894481
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641034333, -122.327975)
+0.013795165290061214
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410505, -122.3279915)
+0.011933963309925402
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641063, -122.328003667)
+0.010576197599454842
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641082, -122.328017)
+0.008627342633402696
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641091833, -122.328023167)
+0.007687660641341741
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641115333, -122.328045167)
+0.006155551328542688
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641121833, -122.328037667)
+0.005239697316812958
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641136333, -122.328032167)
+0.0038110028811544645
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129333, -122.328034333)
+0.004454547123387998
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641131833, -122.328035167)
+0.00430755583810954
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641123333, -122.3280415)
+0.005308286789212773
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641119833, -122.328044667)
+0.0057548029364618706
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641116167, -122.3280515)
+0.006403443351009693
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641113167, -122.328051667)
+0.006657089069371016
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641115167, -122.328056167)
+0.0067283110759830235
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641115833, -122.328062333)
+0.007014930654055801
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411155, -122.328066333)
+0.007265916927704262
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641118167, -122.328065)
+0.0069993779782204285
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641119333, -122.328066167)
+0.00698752743616721
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641120333, -122.328063833)
+0.00678082549900363
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641124333, -122.3280655)
+0.0066199861677833935
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129667, -122.328064)
+0.006207827362961586
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411345, -122.328068667)
+0.006272377050872915
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641138, -122.3280745)
+0.006532475281247128
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641142333, -122.328073)
+0.006277518215093995
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641148, -122.328074333)
+0.006233123403421291
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641148167, -122.328072167)
+0.0060696421860163404
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641148, -122.3280675)
+0.005728349574885464
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641149, -122.32807)
+0.005893314377872677
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145333, -122.328070833)
+0.006035689831484862
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641142833, -122.328078)
+0.006625379963296068
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411405, -122.328076333)
+0.0065755212263750315
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641136, -122.328076167)
+0.006727519679886407
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641135667, -122.328076333)
+0.006752578892851204
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641127333, -122.328075)
+0.007055050817621768
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411325, -122.328066)
+0.006188471284199231
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641134, -122.328065167)
+0.006058020514701222
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641135167, -122.328058167)
+0.0055294259950326215
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641142667, -122.328062667)
+0.00552356935253123
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641150667, -122.328070167)
+0.005877708471752743
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145667, -122.328064833)
+0.005588815280990926
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145333, -122.328069)
+0.005901741977428727
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641146167, -122.3280735)
+0.006210852822177983
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145833, -122.328073167)
+0.006194277055815444
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641147167, -122.328070833)
+0.005992023397042127
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411545, -122.328073833)
+0.00611017384809342
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641158667, -122.328071333)
+0.005911799626284765
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641157833, -122.328061667)
+0.005184755760655748
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411575, -122.328049833)
+0.004295692146055474
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641165, -122.3280545)
+0.004714053986020308
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641163667, -122.328053333)
+0.004604444436813621
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641161333, -122.328051333)
+0.004425387094393336
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641157667, -122.328048333)
+0.004182861220412308
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641156167, -122.328043)
+0.0037866247567861647
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641154833, -122.328036167)
+0.0032856249734227578
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641144833, -122.328026167)
+0.0029026908708839907
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641143167, -122.328019167)
+0.0025737073606494788
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411405, -122.328007667)
+0.0022325486373992705
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641133167, -122.327996667)
+0.002758869679304211
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641121333, -122.327987167)
+0.004079181227001832
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641116333, -122.327976667)
+0.004768168726967696
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641113333, -122.327967333)
+0.005301239716723769
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641107167, -122.327959333)
+0.006164978102841843
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641101833, -122.327951833)
+0.006941254816064564
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108, -122.327944167)
+0.0066317111764417494
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641100667, -122.327933833)
+0.007742199211220099
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641094833, -122.327926)
+0.008611524432396793
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410905, -122.3279215)
+0.009200083022929033
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641088333, -122.3279225)
+0.009354623965113669
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641080167, -122.327924167)
+0.010052841864894744
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641076333, -122.327930667)
+0.010188908972542926
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641070333, -122.327937167)
+0.010584722636039033
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410685, -122.3279435)
+0.010597196803198447
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641074667, -122.327950833)
+0.009766389124656905
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641082333, -122.327963167)
+0.008682085838051284
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641085333, -122.327973167)
+0.008192884014289767
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641088333, -122.327983333)
+0.007759006926450878
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410855, -122.327995333)
+0.008044718984883976
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641092833, -122.327999)
+0.007242567326839916
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641104667, -122.328005167)
+0.005985331590168089
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641111333, -122.328012167)
+0.0053736524662599304
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411095, -122.328018167)
+0.005705212572762381
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108667, -122.328024)
+0.005951906813074912
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641105333, -122.3280245)
+0.006308215669083408
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411115, -122.328028167)
+0.005801136151197639
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641115167, -122.328028833)
+0.005467019744445397
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641114667, -122.328027833)
+0.00547869182261578
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108167, -122.328026167)
+0.006068716435433992
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641104833, -122.328022333)
+0.006300254146255812
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641101667, -122.328019167)
+0.0065545127706108045
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641097833, -122.328016167)
+0.006900751956706475
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641091333, -122.328018333)
+0.00764107988697343
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641089, -122.3280175)
+0.007877282723275057
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641097333, -122.328016833)
+0.006967382217221545
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641100167, -122.3280165)
+0.006656909146667543
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641102833, -122.328014167)
+0.006324888841480885
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108333, -122.328014167)
+0.005735792155455253
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641114667, -122.328013)
+0.005036664682310841
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641121333, -122.3280135)
+0.004349651033992764
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641128716, -122.328013141)
+0.0035842835305878004
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641136333, -122.328016667)
+0.002994401543263519
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641142, -122.328018)
+0.002592762469317796
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411455, -122.328017833)
+0.002335844233295748
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145, -122.3280155)
+0.002231466296265913
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139, -122.328012167)
+0.0025556725987942413
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641134833, -122.328007333)
+0.0027845671429325013
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411305, -122.3280055)
+0.003188294002293494
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641124, -122.3280005)
+0.003807434794585703
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641122833, -122.327996833)
+0.003903987501956096
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641113667, -122.327991333)
+0.004911546279706426
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411065, -122.3279875)
+0.00572056497851921
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411055, -122.327985833)
+0.0058411738463778696
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108333, -122.327988167)
+0.005513952886549076
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641109, -122.327989333)
+0.0054351925833741425
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641110333, -122.327990333)
+0.005284119782319306
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641113167, -122.327992833)
+0.004966130633351051
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641113167, -122.327992)
+0.004966367870357432
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.64111, -122.327987333)
+0.005333314363183988
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641114667, -122.327988833)
+0.004807978909783043
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641121167, -122.327992)
+0.004076956346841653
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641126833, -122.327993667)
+0.0034475024616786604
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641130333, -122.327994667)
+0.00306123288125692
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641132333, -122.327993667)
+0.0028361706909055136
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129833, -122.327990667)
+0.00311675871562673
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641124833, -122.327986333)
+0.0036997909849808466
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411165, -122.327981667)
+0.004669281566315883
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108833, -122.327976667)
+0.005579064486252962
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108667, -122.327975833)
+0.0056108836957091904
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641110667, -122.327975333)
+0.005403407702102202
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641111, -122.3279735)
+0.005402558713637483
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411195, -122.327976833)
+0.0044249479803254365
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411205, -122.327978333)
+0.0042882745132516885
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641121833, -122.327982667)
+0.004072521490225185
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411325, -122.327993333)
+0.0028170520487400957
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641132, -122.327997167)
+0.0028920346229221175
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139, -122.328006333)
+0.002332160124675026
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641143833, -122.328012167)
+0.0021377274915951863
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411485, -122.3280185)
+0.0022010779321625746
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145833, -122.328020833)
+0.0025018746218893302
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411425, -122.328018667)
+0.002592895324353771
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641132167, -122.328011667)
+0.003190846659982451
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411195, -122.328004333)
+0.004351205980148714
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641110833, -122.3279985)
+0.005243965919334491
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641100333, -122.327992)
+0.006393238375618552
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410925, -122.327985667)
+0.007282959863153803
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410855, -122.327980333)
+0.008095450616399373
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641083167, -122.3279765)
+0.008390028628980115
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641080833, -122.327975333)
+0.00865963249682162
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641079833, -122.327973333)
+0.008793143707486727
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641077833, -122.327971333)
+0.009037971384471556
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641078167, -122.327966833)
+0.009067752879392306
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641079667, -122.327964333)
+0.008947744947503892
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641079, -122.3279635)
+0.009034770900708821
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641077333, -122.327960833)
+0.009264396727129637
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641079, -122.327961167)
+0.009078889338421084
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641078833, -122.3279645)
+0.009034887708098264
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641091167, -122.327973167)
+0.007555588970878892
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641097833, -122.3279775)
+0.006767650433078547
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641097667, -122.327974833)
+0.006822362098583239
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641099833, -122.327973833)
+0.006602098523427179
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641102, -122.327970667)
+0.006424041399450206
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641104167, -122.327968167)
+0.006244312336031914
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641104333, -122.327965167)
+0.006297010342781473
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641109833, -122.327965167)
+0.005722883931949595
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641110667, -122.3279625)
+0.0057130243779145275
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108667, -122.327957833)
+0.006060787776111678
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641102833, -122.327951)
+0.006869999544443797
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410925, -122.327941833)
+0.00820702443859602
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641084833, -122.3279365)
+0.009148116980153326
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641072667, -122.327931667)
+0.010520093625499782
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641065, -122.327927667)
+0.0114187723765553
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641050833, -122.327920667)
+0.013069032275850623
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641036, -122.327911833)
+0.014845268279801435
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641023, -122.327903833)
+0.016410142374040274
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641025167, -122.327902333)
+0.016237132726452535
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410245, -122.327895333)
+0.016530427958310476
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641054667, -122.327912667)
+0.012950082435958464
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641087833, -122.3279365)
+0.008853522416455536
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641107667, -122.327948333)
+0.006496735649847897
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411255, -122.327958667)
+0.00441024762625959
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129333, -122.327961)
+0.003962682598887854
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129167, -122.327959333)
+0.0040536363389944065
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641125333, -122.327955)
+0.004589986058384524
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641120333, -122.3279515)
+0.005191578048447254
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641119167, -122.327951)
+0.005318286660845727
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641113333, -122.327947667)
+0.005992741168848828
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641121667, -122.327955333)
+0.004902934836275957
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641120333, -122.327951333)
+0.005199064775827073
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641122, -122.3279545)
+0.004908919824502103
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641115833, -122.327958667)
+0.005322888769967013
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411125, -122.3279625)
+0.005526545667807278
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641107667, -122.327959667)
+0.006103984789464127
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641100333, -122.327955333)
+0.006981465606769037
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641094, -122.327949333)
+0.007808486796064073
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641084833, -122.327947)
+0.008811967254089769
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641082, -122.3279455)
+0.009145997014368907
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641077167, -122.3279475)
+0.00958939521759478
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410675, -122.327944833)
+0.010667309500576923
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641056833, -122.327939)
+0.011931640766115402
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410475, -122.3279325)
+0.013073781048302358
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641044833, -122.327933833)
+0.013318825288212518
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410325, -122.327928333)
+0.014749630832389823
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641036, -122.327931333)
+0.014308355987996872
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410415, -122.327935167)
+0.013636853417658808
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641046833, -122.327937)
+0.013030947140744941
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641056, -122.327941833)
+0.011949105083607355
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641066167, -122.327951167)
+0.010658125100140494
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641079, -122.327961833)
+0.00906597105887343
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641085667, -122.327968)
+0.008234960912057956
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641095333, -122.327976333)
+0.007056517459040074
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641106, -122.327986333)
+0.005782586004644196
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641102, -122.327983333)
+0.006247195414869248
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641101667, -122.3279835)
+0.006282598563319066
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641101667, -122.3279865)
+0.00626189321547578
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641110167, -122.327991167)
+0.005300863413283455
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641112506, -122.327991616)
+0.005040225897639922
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641117, -122.327994333)
+0.00454167485573012
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641123387, -122.32799931)
+0.0038622138691384628
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411335, -122.328013167)
+0.0031132215458531147
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641137249, -122.328019291)
+0.003039726823233973
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641127833, -122.328007333)
+0.0035128361590627106
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641122167, -122.327995667)
+0.003971867093190885
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411255, -122.328016)
+0.00399965148024341
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129167, -122.3280305)
+0.004270805517363025
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641135833, -122.328040333)
+0.004337232281573534
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641148333, -122.328052)
+0.0045817746995290565
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411545, -122.328055333)
+0.004723369574287723
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411565, -122.328056333)
+0.004786246849941051
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641169, -122.3280565)
+0.004954587876993508
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411545, -122.328049667)
+0.00429906055006444
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641156667, -122.328047333)
+0.004109724381901782
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641157167, -122.328042667)
+0.003757799052366136
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411555, -122.328038833)
+0.0034786617633516008
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411615, -122.3280445)
+0.003916084850261262
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641159333, -122.328043)
+0.0037857666868023423
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641147167, -122.3280325)
+0.0032194728838639795
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139, -122.328029833)
+0.0034905137762851752
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641136833, -122.328028333)
+0.0035544182299654756
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641135667, -122.328026667)
+0.00354975391423108
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411345, -122.328026333)
+0.00362346806386588
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641137167, -122.328031)
+0.003684585619570659
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641140167, -122.328033667)
+0.003653663409379598
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641133333, -122.328026167)
+0.0037089909332768405
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129833, -122.328021833)
+0.0038071771549771727
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641133833, -122.3280235)
+0.003533848230148564
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641136667, -122.328026333)
+0.0034550668185724747
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641132167, -122.328021167)
+0.0035678234420704943
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129167, -122.3280225)
+0.003896577563504066
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641124333, -122.3280195)
+0.00423536296058627
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641124167, -122.328019667)
+0.004257568264131194
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641131, -122.328025167)
+0.0038554380751831567
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641134833, -122.328031833)
+0.003898786660445939
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641100167, -122.327998333)
+0.006425618672943762
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641109833, -122.328007167)
+0.005446885080209667
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641122667, -122.328017333)
+0.004326932134943718
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641131167, -122.328024333)
+0.0038015528366494235
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641134667, -122.328028667)
+0.0037351850580283744
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641133, -122.328030167)
+0.003945024784126212
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139667, -122.328035667)
+0.003810419385593878
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.64115, -122.328048167)
+0.0042603124453724685
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641149167, -122.328044833)
+0.0040365079417200335
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145833, -122.328041833)
+0.003927937775775307
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641147667, -122.328039833)
+0.0037199912445845646
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641141833, -122.328032)
+0.0034496088209832044
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641133833, -122.328018667)
+0.0033071454691963303
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.64112, -122.328004833)
+0.004304590809945797
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411215, -122.327998333)
+0.004061998022306712
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641112667, -122.327987)
+0.0050397287320826855
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411035, -122.327975833)
+0.006171937795297077
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641102667, -122.327971)
+0.0063459426290690055
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641102167, -122.327965667)
+0.0065131755419314905
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641103, -122.3279645)
+0.006453457630474394
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641099, -122.327954167)
+0.007152417325686775
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641105, -122.327957333)
+0.006446309416833656
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641114333, -122.327959333)
+0.0054465893307897376
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641109167, -122.327953167)
+0.006171451627955254
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411055, -122.327945)
+0.006832617559094679
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411115, -122.327944167)
+0.006310219272539408
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641113333, -122.327943333)
+0.006182343623918827
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641120167, -122.327948167)
+0.005359000366512417
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641122, -122.327951)
+0.005067066049005771
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641128333, -122.327954)
+0.0043817448976617565
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641130667, -122.327954)
+0.004191031398943629
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641133333, -122.327956)
+0.0038744435581387878
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641134167, -122.327957667)
+0.003720240245181881
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411375, -122.3279635)
+0.0031486583715349525
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641138833, -122.327965)
+0.002963876838123323
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411375, -122.327967333)
+0.0029554253239655144
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641137, -122.3279685)
+0.002943265348247351
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641136, -122.327969833)
+0.0029726229534791987
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641140167, -122.327972333)
+0.0024884732445466995
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641143833, -122.327973667)
+0.0021121526731578367
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145833, -122.3279705)
+0.0021341299903421757
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641147667, -122.327970667)
+0.002002580842247976
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641147833, -122.327970167)
+0.0020235061221075823
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641149, -122.3279655)
+0.002265317214413459
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641148667, -122.327966333)
+0.002225785815434256
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641149, -122.327968667)
+0.0020534638702124144
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641147167, -122.327977)
+0.0016709905711967273
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641146, -122.327984167)
+0.0014624735200259023
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641145167, -122.327986833)
+0.0014749018429063099
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641143167, -122.327990833)
+0.0016364278636241823
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641143833, -122.327990333)
+0.0015664157015486588
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641141667, -122.328000333)
+0.0018874388430206747
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139333, -122.328003167)
+0.002203020781585837
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641140167, -122.328002833)
+0.002107478976379943
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641141833, -122.328002333)
+0.0019214942413499927
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139833, -122.328006)
+0.002238063022543542
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139833, -122.328004167)
+0.002179888980850348
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641138, -122.328003)
+0.0023378013747973937
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641134333, -122.3280025)
+0.0027152698020663875
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411325, -122.328002667)
+0.0029151159350900295
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129, -122.3279995)
+0.003246605880596779
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411245, -122.327998333)
+0.0037304490511711665
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641124667, -122.328000333)
+0.003732227226814611
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641124, -122.328001)
+0.003813423422580541
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641108333, -122.328001333)
+0.00554196443885118
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641109167, -122.327999167)
+0.005432847584431074
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641112833, -122.328002833)
+0.0050612288010860465
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411155, -122.328004167)
+0.004785391036235724
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411125, -122.328007833)
+0.005167498506457225
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411165, -122.328023333)
+0.005140888390478951
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641116167, -122.328040333)
+0.0058556952772964915
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411195, -122.328036333)
+0.005378693884345178
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641111167, -122.328013)
+0.0054087585417548914
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411205, -122.328011)
+0.004373430658002765
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641139333, -122.328008333)
+0.0023699201624213097
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641151333, -122.328003833)
+0.0011073629028041678
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641148667, -122.328000667)
+0.0011831891977337236
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411385, -122.327997833)
+0.002184277106357043
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641135833, -122.327999)
+0.0024918933198474712
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641134833, -122.3280015)
+0.002641947617885509
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6411335, -122.328004167)
+0.002840076395869802
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129333, -122.328005833)
+0.003319571774502563
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641129833, -122.328009833)
+0.0033697750217867787
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641131667, -122.3280135)
+0.0033036528912059023
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641127167, -122.328009)
+0.003623706227369375
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641120333, -122.3280025)
+0.0042343372086618035
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641112833, -122.3279945)
+0.005005145682665718
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.641100987, -122.327979545)
+0.006396776822042117
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(47.6410915, -122.3279705)
+0.007560878443804164
+Alarm not tripped, continuing period checks
+Checking Alarm Status and Geofence alarm
+(nan, nan)

@@ -69,20 +69,22 @@ def gmrs_power(pin,value):
 
 ### Alarm system handling ###
 
+### Fuel Pump Disable ###
+
 @blynk.handle_event('write V1')
+def fuel_pump(pin,value):
+        print ('Fuel Pump Disabled: {}'.format(int(value[0])))
+        lib8relay.set(1,1,int(value[0]))
+
+### Geofence Alarm ###
+@blynk.handle_event('write V15')
 def alarm(pin,value):
 	current_date = datetime.datetime.now()
 	credentials = {'devicekey': 'LMaCQ?]G'}
 	hologram = HologramCloud(credentials, network='cellular', authentication_type='csrpsk')
 
-	### fuel pump de-activation ###
-	print ('Alarm Status: {}'.format(int(value[0])))
+
 	if int(value[0]) == 1:
-		print('Disabling Fuel Pump in 10 Seconds')
-		time.sleep(10)
-		print('Disabling Fuel Pump')
-		lib8relay.set(1,1,int(value[0]))
-		blynk.virtual_write(14, "DISABLED")
 		blynk.virtual_write(13, current_date.strftime("%Y-%m-%d %H:%M:%S"))
 
 		### gather/write GPS vehicle data ###
@@ -90,8 +92,8 @@ def alarm(pin,value):
 		vehicle_lat = gps_data[0]
 		vehicle_lon = gps_data[1]
 		vehicle_alt = gps_data[2]
-		blynk.virtual_write(25, vehicle_lat)
-		blynk.virtual_write(26, vehicle_lon)
+		blynk.virtual_write(25, round(vehicle_lat,5))
+		blynk.virtual_write(26, round(vehicle_lon,5))
 		blynk.virtual_write(35, vehicle_alt)
 
 		### send activation SMS ###
@@ -148,10 +150,7 @@ def alarm(pin,value):
 
 
 	else:
-		print('Alarm toggled off-2')
-		lib8relay.set(1,1,int(value[0]))
-		blynk.virtual_write(14, "ENABLED")
-
+		print('Alarm toggled off')
 
 ### Gather GPS Data ###
 
@@ -190,15 +189,15 @@ def send_imu_data(vpin_num = 101):
 	gyroXangle = berryIMUspi.get_imud()[2]
 	gyroYangle = berryIMUspi.get_imud()[3]
 	gyroZangle = berryIMUspi.get_imud()[4]
-	CFangleX = berryIMUspi.get_imud()[5]
-	CFangleY = berryIMUspi.get_imud()[6]
+	CFangleX = round(berryIMUspi.get_imud()[5],1) + pitch_offset
+	CFangleY = round(berryIMUspi.get_imud()[6],1) + roll_offset
 	ACCx = berryIMUspi.get_imud()[7]
 	ACCy = berryIMUspi.get_imud()[8]
 	ACCz = berryIMUspi.get_imud()[9]
 
 	#write Blynk data
-	blynk.virtual_write(30, AccXangle)
-	blynk.virtual_write(31, AccYangle)
+	blynk.virtual_write(30, CFangleX)
+	blynk.virtual_write(31, CFangleY)
 	blynk.virtual_write(32, ACCx)
 	blynk.virtual_write(33, ACCy)
 	blynk.virtual_write(34, ACCz)
@@ -215,7 +214,7 @@ def gather_hologram_data():
 
 ### SEND GMS DATA TO BLYNK ###
 
-@timer.register(vpin_num = 102, interval = 31, run_once = False)
+#@timer.register(vpin_num = 102, interval = 31, run_once = False)
 def send_gms_data(vpin_num = 102):
 	### print GMS data ###
 	rssi = gather_hologram_data()[0]
@@ -232,8 +231,10 @@ def send_gms_data(vpin_num = 102):
 
 
 ### WHILE LOOP TO RUN BLYNK ###
-
-print('Welcome to the 4Runner MOC, powered by Raspberry Pi')
+now  = datetime.datetime.now()
+start_time = now.strftime("%d/%m/%Y %H:%M:%S")
+print ('Start time: ' + str(start_time) + ' UTC')
+print ('Welcome to the 4Runner MOC, powered by Raspberry Pi')
 
 try:
 	while True:
